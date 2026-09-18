@@ -9,6 +9,7 @@
   <p>
     <a href="https://routewarden.github.io/traefik-warden/"><img src="https://img.shields.io/badge/Docs-VitePress%20Wiki-6366f1.svg?style=for-the-badge" alt="Documentation Site" /></a>
     <a href="https://github.com/routewarden/traefik-warden"><img src="https://img.shields.io/badge/Traefik%20Plugin-traefik--warden-blue.svg?style=for-the-badge&logo=traefik" alt="Traefik Plugin" /></a>
+    <a href="https://github.com/routewarden/caddy-warden"><img src="https://img.shields.io/badge/Caddy%20Module-caddy--warden-1f883d.svg?style=for-the-badge&logo=caddy" alt="Caddy Module" /></a>
     <a href="https://github.com/routewarden/traefik-warden/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="MIT License" /></a>
   </p>
 
@@ -24,21 +25,22 @@ Our mission is to safeguard modern reverse proxies, microservices, and container
 
 ---
 
-### 🚀 Flagship Project: [`traefik-warden`](https://github.com/routewarden/traefik-warden)
+### 🚀 Projects
 
+#### 1. [`traefik-warden`](https://github.com/routewarden/traefik-warden)
 Our flagship middleware plugin for [Traefik](https://traefik.io) reverse proxy and ingress controller:
+- 🛡️ **Anti-Probing & Scanner Defense**: Intercepts automated scanners searching for `.env`, credentials, backups, and exposed panels.
+- ⚡ **Anti-Evasion Engine**: Normalizes multi-layer URL encoding (`%252e`), semicolon matrix parameters (`/;param/.env`), Windows backslashes (`\`), and null bytes (`%00`).
+- 🌐 **IP & CIDR Subnet Whitelisting**: Granular bypass policies with support for `X-Forwarded-For`, `X-Real-IP`, and socket `RemoteAddr`.
+- 🎭 **Multi-Mode Responses**: Standard `404 Not Found` cloaking, `403 Forbidden`, JSON/HTML payloads, Cloudflare Turnstile / hCaptcha challenges, silent TCP drops (`silentDrop`), and active defense `gzipBomb`.
+-  **Pure Go & Yaegi-native**: Zero third-party dependencies.
 
-- 🛡️ **Anti-Probing & Scanner Defense**: Instantly intercept automated vulnerability crawlers looking for exposed secrets, configuration files, and unprotected admin panels.
-- 📁 **Zero-Config File Protection**: Pre-configured protection against leaks of `.env*`, `.git`, `.aws`, `.sql`, `.bak`, `.conf`, `.yaml`, server logs, debug routes, and more.
-- ⚡ **Anti-Evasion Engine**: Normalizes multi-layer URL encoding (`%252e%252e`), semicolon matrix parameters (`/;param/.env`), Windows backslashes (`\`), and null bytes (`%00`).
-- 🌐 **IP & CIDR Subnet Whitelisting**: Granular bypass policies for corporate VPNs, office IPs, and developer subnets with support for `X-Forwarded-For`, `X-Real-IP`, and socket `RemoteAddr`.
-- 🎭 **Multi-Mode Response Engine**:
-  - `404 Not Found` (stealth mode cloaking) & `403 Forbidden`
-  - Branded HTML / JSON API payloads
-  - Interactive **Cloudflare Turnstile** & **hCaptcha** proof-of-work challenges
-  - Silent TCP drops (`silentDrop`)
-  - Active defense **Gzip Bomb** (`gzipBomb`) to stall automated vulnerability scanners.
--  Pure Go & Yaegi-native with **zero external dependencies**.
+#### 2. [`caddy-warden`](https://github.com/routewarden/caddy-warden)
+High-performance security module for the [Caddy](https://caddyserver.com) web server:
+- ⚡ **Native Caddy HTTP Handler**: Seamlessly integrates into Caddy v2's middleware pipeline and Caddyfile directive syntax.
+- 🛡️ **Path Normalization & Sensitive File Shield**: Shares RouteWarden's signature anti-evasion normalization engine and zero-config blocking rules.
+- 📝 **Clean Caddyfile Directives**: Simple, declarative configuration for blocking sensitive files, custom regexes, and IP whitelists.
+- 🚀 **High Throughput**: Built to leverage Caddy's asynchronous Go runtime for ultra-low latency request filtering.
 
 ---
 
@@ -47,7 +49,7 @@ Our flagship middleware plugin for [Traefik](https://traefik.io) reverse proxy a
 | Resource | Description |
 |---|---|
 | 📖 **[Documentation & Wiki](https://routewarden.github.io/traefik-warden/)** | Full configuration guide, architecture walkthrough, and cookbooks. |
-| ⚡ **[Getting Started](https://routewarden.github.io/traefik-warden/guide/getting-started)** | Quickstart installation with Docker Compose and Kubernetes IngressRoute. |
+| ⚡ **[Getting Started](https://routewarden.github.io/traefik-warden/guide/getting-started)** | Quickstart installation with Docker Compose, Kubernetes, and Caddyfile. |
 | 🔒 **[Anti-Evasion Engine](https://routewarden.github.io/traefik-warden/reference/anti-evasion)** | Deep-dive into URL normalization and traversal protection specs. |
 | 🧪 **[Cookbooks & Case Studies](https://routewarden.github.io/traefik-warden/examples/overview)** | Production recipes for Immich, WordPress, Vaultwarden, Webhooks, and Prometheus. |
 
@@ -55,7 +57,8 @@ Our flagship middleware plugin for [Traefik](https://traefik.io) reverse proxy a
 
 ### 📦 Ecosystem & Repositories
 
-- **[`traefik-warden`](https://github.com/routewarden/traefik-warden)**: Core Traefik middleware plugin written in pure Go.
+- **[`traefik-warden`](https://github.com/routewarden/traefik-warden)**: Traefik middleware plugin written in pure Go.
+- **[`caddy-warden`](https://github.com/routewarden/caddy-warden)**: Caddy v2 HTTP middleware module.
 - **[`routewarden-docs`](https://github.com/routewarden/routewarden-docs)**: Interactive VitePress documentation and case study cookbook.
 - **[`.github`](https://github.com/routewarden/.github)**: Organization profile and global community templates.
 
