@@ -53,7 +53,7 @@ A native security module for the [Caddy](https://caddyserver.com) web server:
 | **[Documentation](https://routewarden.github.io/docs/traefik/)** | Full guides, configuration reference, and architecture details. |
 | **[Getting Started](https://routewarden.github.io/docs/traefik/getting-started)** | Quickstart setup with Docker Compose, Kubernetes, and Caddyfile. |
 | **[Anti-Evasion Engine](https://routewarden.github.io/docs/core/anti-evasion)** | How path normalization and traversal protection work under the hood. |
-| **[Recipes & Examples](https://routewarden.github.io/docs/examples/case-study-immich)** | Setup examples for **Immich**, [Zero-Trust Webooks](https://routewarden.github.io/docs/examples/case-study-webhooks), [Vaultwarden](https://routewarden.github.io/docs/examples/case-study-vaultwarden) and [Wordpress](https://routewarden.github.io/docs/examples/case-study-cms-shield). |
+| **[Recipes & Examples](https://routewarden.github.io/docs/examples/overview)** | Setup examples for **Immich**, [Zero-Trust Webooks](https://routewarden.github.io/docs/examples/case-study-webhooks), [Vaultwarden](https://routewarden.github.io/docs/examples/case-study-vaultwarden) and [Wordpress](https://routewarden.github.io/docs/examples/case-study-cms-shield). |
 
 ---
 
