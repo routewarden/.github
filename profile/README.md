@@ -12,6 +12,7 @@
     <a href="https://github.com/routewarden/traefik-warden"><img src="https://img.shields.io/badge/Traefik%20Plugin-traefik--warden-blue.svg?style=for-the-badge&logo=traefik" alt="Traefik Plugin" /></a>
     <a href="https://github.com/routewarden/caddy-warden"><img src="https://img.shields.io/badge/Caddy%20Module-caddy--warden-1f883d.svg?style=for-the-badge&logo=caddy" alt="Caddy Module" /></a>
     <a href="https://github.com/routewarden/nginx-warden"><img src="https://img.shields.io/badge/NGINX%20Lua-nginx--warden-009639.svg?style=for-the-badge&logo=nginx" alt="NGINX Lua Module" /></a>
+    <a href="https://github.com/routewarden/cli"><img src="https://img.shields.io/badge/CLI%20Tool-rwarden-ea580c.svg?style=for-the-badge&logo=gnubash&logoColor=white" alt="RouteWarden CLI" /></a>
     <a href="https://github.com/routewarden/traefik-warden/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="MIT License" /></a>
   </p>
 
@@ -51,12 +52,20 @@ A zero-dependency Lua security module for [NGINX & OpenResty](https://openresty.
 - **Hardware Acceleration**: Automatically utilizes PCRE JIT (`ngx.re`) when available with pure-Lua pattern matching fallback.
 - **CrowdSec Integration**: Emits single-line structured JSON security events for log acquisition and automated firewall remediation.
 
+#### [`cli`](https://github.com/routewarden/cli) (`rwarden`)
+The developer CLI and configuration tool for RouteWarden:
+- **Offline Path & Pattern Simulation**: Test URLs, query params, and evasion vectors against RouteWarden's normalization engine without running a web server.
+- **Configuration Validator**: Validate `routewarden.json` against the official JSON schema before deploying.
+- **Gateway Config Generator**: Compile a unified `routewarden.json` specification directly into Traefik dynamic YAML, Docker Compose labels, Caddyfile directives, or OpenResty Lua tables.
+- **Docker & Standalone**: Pre-built binaries for macOS, Linux, and Windows, or runnable via `ghcr.io/routewarden/cli:latest`.
+
 ---
 
 ### Documentation & Resources
 
 | Resource | Description |
 |---|---|
+| **[CLI Documentation](https://routewarden.github.io/cli/)** | RouteWarden developer CLI installation, testing commands, and configuration generation guides. |
 | **[Interactive Playground](https://routewarden.github.io/docs/?playground=open)** | Test normalization rules, patterns, and response handling live in your browser. |
 | **[Documentation](https://routewarden.github.io/docs/)** | Full guides, configuration reference, and architecture details for Traefik, Caddy, and NGINX. |
 | **[Getting Started](https://routewarden.github.io/docs/nginx/getting-started)** | Quickstart setup with Docker Compose, Kubernetes, Caddyfile, and OpenResty. |
@@ -70,6 +79,7 @@ A zero-dependency Lua security module for [NGINX & OpenResty](https://openresty.
 - **[`traefik-warden`](https://github.com/routewarden/traefik-warden)**: Traefik middleware plugin written in pure Go.
 - **[`caddy-warden`](https://github.com/routewarden/caddy-warden)**: Caddy v2 HTTP middleware module.
 - **[`nginx-warden`](https://github.com/routewarden/nginx-warden)**: NGINX & OpenResty Lua security module.
+- **[`cli`](https://github.com/routewarden/cli)**: Unified CLI developer tool (`rwarden`) for rule testing and gateway config generation.
 
 ---
 
