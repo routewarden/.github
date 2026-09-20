@@ -14,19 +14,18 @@ All contributors and participants are expected to maintain an inclusive, respect
 
 ### 1. Reporting Bugs
 - Search existing issues to ensure the bug hasn't already been reported.
-- Open an issue using the Bug Report template.
-- Include your environment details (Traefik version, OS/Docker, plugin configuration) and steps to reproduce.
+- Open an issue describing the problem in detail.
+- Include your environment details (Gateway/Reverse proxy version, OS/Docker, RouteWarden configuration) and steps to reproduce.
 
 ### 2. Suggesting Enhancements
 - Open an issue describing the proposed feature or improvement.
-- Provide motivation and context on why this would benefit RouteWarden users.
+- Provide motivation and context on why this would benefit RouteWarden users across gateways.
 
 ### 3. Pull Requests
 - Fork the repository and create a new branch from `main`.
-- Follow Go standard formatting (`go fmt` / `go vet`).
-- Keep external dependencies minimal (core plugins must remain standard-library-only to ensure Yaegi compatibility).
-- Add or update unit tests to verify your changes.
-- Ensure all tests pass (`go test -v -race ./...`).
+- For Go projects (`traefik-warden`, `caddy-warden`): follow standard formatting (`go fmt` / `go vet`), keep external dependencies minimal, and ensure tests pass (`go test -v -race ./...`).
+- For Lua projects (`nginx-warden`): follow Lua best practices, ensure PCRE JIT compatibility, and run the test runner (`./t/run_tests.sh`).
+- Add or update unit and integration tests to verify your changes.
 - Write clean, descriptive commit messages.
 - Submit your PR with a clear description of the changes made.
 

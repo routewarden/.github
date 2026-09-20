@@ -11,6 +11,7 @@
     <a href="https://routewarden.github.io/docs/?playground=open"><img src="https://img.shields.io/badge/Live%20Demo-Interactive%20Playground-0ea5e9.svg?style=for-the-badge" alt="Interactive Playground" /></a>
     <a href="https://github.com/routewarden/traefik-warden"><img src="https://img.shields.io/badge/Traefik%20Plugin-traefik--warden-blue.svg?style=for-the-badge&logo=traefik" alt="Traefik Plugin" /></a>
     <a href="https://github.com/routewarden/caddy-warden"><img src="https://img.shields.io/badge/Caddy%20Module-caddy--warden-1f883d.svg?style=for-the-badge&logo=caddy" alt="Caddy Module" /></a>
+    <a href="https://github.com/routewarden/nginx-warden"><img src="https://img.shields.io/badge/NGINX%20Lua-nginx--warden-009639.svg?style=for-the-badge&logo=nginx" alt="NGINX Lua Module" /></a>
     <a href="https://github.com/routewarden/traefik-warden/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="MIT License" /></a>
   </p>
 
@@ -43,6 +44,13 @@ A native security module for the [Caddy](https://caddyserver.com) web server:
 - **Declarative Caddyfile Directives**: Easy to configure alongside your existing proxy definitions.
 - **High Throughput**: Minimal latency overhead, built to match Caddy's asynchronous architecture.
 
+#### [`nginx-warden`](https://github.com/routewarden/nginx-warden)
+A zero-dependency Lua security module for [NGINX & OpenResty](https://openresty.org):
+- **OpenResty & NGINX Lua**: Runs in the `access_by_lua` phase to block malicious requests before proxying.
+- **Full Engine Parity**: Complete feature parity with Go cores, including all 13 response modes, CIDR allowlists, query parameter inspection, and anti-evasion normalization.
+- **Hardware Acceleration**: Automatically utilizes PCRE JIT (`ngx.re`) when available with pure-Lua pattern matching fallback.
+- **CrowdSec Integration**: Emits single-line structured JSON security events for log acquisition and automated firewall remediation.
+
 ---
 
 ### Documentation & Resources
@@ -50,10 +58,10 @@ A native security module for the [Caddy](https://caddyserver.com) web server:
 | Resource | Description |
 |---|---|
 | **[Interactive Playground](https://routewarden.github.io/docs/?playground=open)** | Test normalization rules, patterns, and response handling live in your browser. |
-| **[Documentation](https://routewarden.github.io/docs/traefik/)** | Full guides, configuration reference, and architecture details. |
-| **[Getting Started](https://routewarden.github.io/docs/traefik/getting-started)** | Quickstart setup with Docker Compose, Kubernetes, and Caddyfile. |
+| **[Documentation](https://routewarden.github.io/docs/)** | Full guides, configuration reference, and architecture details for Traefik, Caddy, and NGINX. |
+| **[Getting Started](https://routewarden.github.io/docs/nginx/getting-started)** | Quickstart setup with Docker Compose, Kubernetes, Caddyfile, and OpenResty. |
 | **[Anti-Evasion Engine](https://routewarden.github.io/docs/core/anti-evasion)** | How path normalization and traversal protection work under the hood. |
-| **[Recipes & Examples](https://routewarden.github.io/docs/examples/overview)** | Setup examples for **Immich**, [Zero-Trust Webooks](https://routewarden.github.io/docs/examples/case-study-webhooks), [Vaultwarden](https://routewarden.github.io/docs/examples/case-study-vaultwarden) and [Wordpress](https://routewarden.github.io/docs/examples/case-study-cms-shield). |
+| **[Recipes & Examples](https://routewarden.github.io/docs/examples/overview)** | Setup examples for **Immich**, [Zero-Trust Webhooks](https://routewarden.github.io/docs/examples/case-study-webhooks), [Vaultwarden](https://routewarden.github.io/docs/examples/case-study-vaultwarden), and [WordPress](https://routewarden.github.io/docs/examples/case-study-cms-shield). |
 
 ---
 
@@ -61,6 +69,7 @@ A native security module for the [Caddy](https://caddyserver.com) web server:
 
 - **[`traefik-warden`](https://github.com/routewarden/traefik-warden)**: Traefik middleware plugin written in pure Go.
 - **[`caddy-warden`](https://github.com/routewarden/caddy-warden)**: Caddy v2 HTTP middleware module.
+- **[`nginx-warden`](https://github.com/routewarden/nginx-warden)**: NGINX & OpenResty Lua security module.
 
 ---
 
