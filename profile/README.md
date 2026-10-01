@@ -7,8 +7,8 @@
   <p><strong>Open-source, high-performance security middleware and edge defense tools.</strong></p>
 
   <p>
-    <a href="https://routewarden.github.io/docs/"><img src="https://img.shields.io/badge/Docs-VitePress%20Wiki-6366f1.svg?style=for-the-badge" alt="Documentation Site" /></a>
-    <a href="https://routewarden.github.io/docs/?playground=open"><img src="https://img.shields.io/badge/Live%20Demo-Interactive%20Playground-0ea5e9.svg?style=for-the-badge" alt="Interactive Playground" /></a>
+    <a href="https://routewarden.github.io/"><img src="https://img.shields.io/badge/Docs-VitePress%20Wiki-6366f1.svg?style=for-the-badge" alt="Documentation Site" /></a>
+    <a href="https://routewarden.github.io/?playground=open"><img src="https://img.shields.io/badge/Live%20Demo-Interactive%20Playground-0ea5e9.svg?style=for-the-badge" alt="Interactive Playground" /></a>
     <a href="https://github.com/routewarden/traefik-warden"><img src="https://img.shields.io/badge/Traefik%20Plugin-traefik--warden-blue.svg?style=for-the-badge&logo=traefik" alt="Traefik Plugin" /></a>
     <a href="https://github.com/routewarden/caddy-warden"><img src="https://img.shields.io/badge/Caddy%20Module-caddy--warden-1f883d.svg?style=for-the-badge&logo=caddy" alt="Caddy Module" /></a>
     <a href="https://github.com/routewarden/nginx-warden"><img src="https://img.shields.io/badge/NGINX%20Lua-nginx--warden-009639.svg?style=for-the-badge&logo=nginx" alt="NGINX Lua Module" /></a>
@@ -66,11 +66,11 @@ The developer CLI and configuration tool for RouteWarden:
 | Resource | Description |
 |---|---|
 | **[CLI Documentation](https://routewarden.github.io/cli/)** | RouteWarden developer CLI installation, testing commands, and configuration generation guides. |
-| **[Interactive Playground](https://routewarden.github.io/docs/?playground=open)** | Test normalization rules, patterns, and response handling live in your browser. |
-| **[Documentation](https://routewarden.github.io/docs/)** | Full guides, configuration reference, and architecture details for Traefik, Caddy, and NGINX. |
-| **[Getting Started](https://routewarden.github.io/docs/nginx/getting-started)** | Quickstart setup with Docker Compose, Kubernetes, Caddyfile, and OpenResty. |
-| **[Anti-Evasion Engine](https://routewarden.github.io/docs/core/anti-evasion)** | How path normalization and traversal protection work under the hood. |
-| **[Recipes & Examples](https://routewarden.github.io/docs/examples/overview)** | Setup examples for **Immich**, [Zero-Trust Webhooks](https://routewarden.github.io/docs/examples/case-study-webhooks), [Vaultwarden](https://routewarden.github.io/docs/examples/case-study-vaultwarden), and [WordPress](https://routewarden.github.io/docs/examples/case-study-cms-shield). |
+| **[Interactive Playground](https://routewarden.github.io/?playground=open)** | Test normalization rules, patterns, and response handling live in your browser. |
+| **[Documentation](https://routewarden.github.io/)** | Full guides, configuration reference, and architecture details for Traefik, Caddy, and NGINX. |
+| **[Getting Started](https://routewarden.github.io/nginx/getting-started)** | Quickstart setup with Docker Compose, Kubernetes, Caddyfile, and OpenResty. |
+| **[Anti-Evasion Engine](https://routewarden.github.io/core/anti-evasion)** | How path normalization and traversal protection work under the hood. |
+| **[Recipes & Examples](https://routewarden.github.io/examples/overview)** | Setup examples for **Immich**, [Zero-Trust Webhooks](https://routewarden.github.io/examples/case-study-webhooks), [Vaultwarden](https://routewarden.github.io/examples/case-study-vaultwarden), and [WordPress](https://routewarden.github.io/examples/case-study-cms-shield). |
 
 ---
 
