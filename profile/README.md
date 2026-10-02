@@ -12,7 +12,9 @@
     <a href="https://github.com/routewarden/traefik-warden"><img src="https://img.shields.io/badge/Traefik%20Plugin-traefik--warden-blue.svg?style=for-the-badge&logo=traefik" alt="Traefik Plugin" /></a>
     <a href="https://github.com/routewarden/caddy-warden"><img src="https://img.shields.io/badge/Caddy%20Module-caddy--warden-1f883d.svg?style=for-the-badge&logo=caddy" alt="Caddy Module" /></a>
     <a href="https://github.com/routewarden/nginx-warden"><img src="https://img.shields.io/badge/NGINX%20Lua-nginx--warden-009639.svg?style=for-the-badge&logo=nginx" alt="NGINX Lua Module" /></a>
+    <a href="https://github.com/routewarden/tcp-warden"><img src="https://img.shields.io/badge/L4%20Proxy-tcp--warden-8b5cf6.svg?style=for-the-badge" alt="TCP Warden" /></a>
     <a href="https://github.com/routewarden/cli"><img src="https://img.shields.io/badge/CLI%20Tool-rwarden-ea580c.svg?style=for-the-badge&logo=gnubash&logoColor=white" alt="RouteWarden CLI" /></a>
+    <a href="https://routewarden.github.io/cli/dashboard"><img src="https://img.shields.io/badge/Observability-Grafana%20Dashboard-F46800.svg?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana Dashboard" /></a>
     <a href="https://github.com/routewarden/traefik-warden/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="MIT License" /></a>
   </p>
 
@@ -52,6 +54,13 @@ A zero-dependency Lua security module for [NGINX & OpenResty](https://openresty.
 - **Hardware Acceleration**: Automatically utilizes PCRE JIT (`ngx.re`) when available with pure-Lua pattern matching fallback.
 - **CrowdSec Integration**: Emits single-line structured JSON security events for log acquisition and automated firewall remediation.
 
+#### [`tcp-warden`](https://github.com/routewarden/tcp-warden)
+A high-performance Layer 4 (TCP/UDP) reverse proxy and defense daemon:
+- **L4 Zero-Trust Defense**: Network-layer security filtering for SSH, database (PostgreSQL, MySQL, Redis), DNS, BitTorrent, and custom protocols.
+- **Dynamic Port Filtering & GeoIP**: High-speed CIDR routing, IP blocking, and GeoIP country resolution.
+- **Protocol Inspection Plugins**: Deep protocol parsers with protocol anomaly detection.
+- **Structured JSON Event Logs**: Emits unified security telemetry to stdout and UDP syslog for SIEM and Grafana Loki ingestion.
+
 #### [`cli`](https://github.com/routewarden/cli) (`rwarden`)
 The developer CLI and configuration tool for RouteWarden:
 - **Offline Path & Pattern Simulation**: Test URLs, query params, and evasion vectors against RouteWarden's normalization engine without running a web server.
@@ -59,13 +68,22 @@ The developer CLI and configuration tool for RouteWarden:
 - **Gateway Config Generator**: Compile a unified `routewarden.json` specification directly into Traefik dynamic YAML, Docker Compose labels, Caddyfile directives, or OpenResty Lua tables.
 - **Docker & Standalone**: Pre-built binaries for macOS, Linux, and Windows, or runnable via `ghcr.io/routewarden/cli:latest`.
 
+#### [Security Observability & Grafana Dashboard](https://routewarden.github.io/cli/dashboard)
+Turnkey threat intelligence and security monitoring stack powered by Grafana, Loki, and Grafana Alloy:
+- **One-Command Deployment**: Launch a fully wired local observability stack via `rwarden dashboard` (`rwarden dashboard up`), or export via `rwarden dashboard export ./observability`.
+- **Pre-Configured Threat Dashboard**: Embedded with the **"RouteWarden — Threat & Security Intelligence"** dashboard ([`routewarden-overview.json`](../dashboards/routewarden-overview.json)), featuring live attack timelines, top targeted endpoints, GeoIP offender maps, verdict distributions, and real-time security event feed.
+- **Automated Container Discovery**: Alloy automatically discovers and tails reverse proxy containers labeled `routewarden.logs=true` via Docker socket with zero manual configuration.
+- **Existing Stack Integration**: Seamlessly reuses existing Grafana & Loki clusters by importing the pre-built dashboard JSON and appending Alloy / Promtail parsing stages.
+
 ---
 
 ### Documentation & Resources
 
 | Resource | Description |
 |---|---|
+| **[Security Dashboard](https://routewarden.github.io/cli/dashboard)** | Complete guide to deploying RouteWarden's Grafana & Loki observability stack, pre-built dashboards, LogQL queries, and reusing existing monitoring infrastructure. |
 | **[CLI Documentation](https://routewarden.github.io/cli/)** | RouteWarden developer CLI installation, testing commands, and configuration generation guides. |
+| **[TCP Warden Docs](https://routewarden.github.io/tcp/)** | Layer 4 TCP/UDP security proxy configuration, protocol plugins (DNS, BitTorrent), and L4 IP access control. |
 | **[Interactive Playground](https://routewarden.github.io/?playground=open)** | Test normalization rules, patterns, and response handling live in your browser. |
 | **[Documentation](https://routewarden.github.io/)** | Full guides, configuration reference, and architecture details for Traefik, Caddy, and NGINX. |
 | **[Getting Started](https://routewarden.github.io/nginx/getting-started)** | Quickstart setup with Docker Compose, Kubernetes, Caddyfile, and OpenResty. |
@@ -79,7 +97,9 @@ The developer CLI and configuration tool for RouteWarden:
 - **[`traefik-warden`](https://github.com/routewarden/traefik-warden)**: Traefik middleware plugin written in pure Go.
 - **[`caddy-warden`](https://github.com/routewarden/caddy-warden)**: Caddy v2 HTTP middleware module.
 - **[`nginx-warden`](https://github.com/routewarden/nginx-warden)**: NGINX & OpenResty Lua security module.
+- **[`tcp-warden`](https://github.com/routewarden/tcp-warden)**: High-performance Layer 4 TCP/UDP security proxy and daemon.
 - **[`cli`](https://github.com/routewarden/cli)**: Unified CLI developer tool (`rwarden`) for rule testing and gateway config generation.
+- **[Security Observability & Dashboard](https://routewarden.github.io/cli/dashboard)**: Turnkey Grafana, Loki, and Alloy security intelligence dashboards.
 
 ---
 
