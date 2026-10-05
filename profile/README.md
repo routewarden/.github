@@ -71,7 +71,7 @@ The developer CLI and configuration tool for RouteWarden:
 #### [Security Observability & Grafana Dashboard](https://routewarden.github.io/cli/dashboard)
 Turnkey threat intelligence and security monitoring stack powered by Grafana, Loki, and Grafana Alloy:
 - **One-Command Deployment**: Launch a fully wired local observability stack via `rwarden dashboard` (`rwarden dashboard up`), or export via `rwarden dashboard export ./observability`.
-- **Pre-Configured Threat Dashboard**: Embedded with the **"RouteWarden — Threat & Security Intelligence"** dashboard ([`routewarden-overview.json`](../dashboards/routewarden-overview.json)), featuring live attack timelines, top targeted endpoints, GeoIP offender maps, verdict distributions, and real-time security event feed.
+- **Pre-Configured Threat Dashboard**: Embedded with the **"RouteWarden — Threat & Security Intelligence"** dashboard ([`routewarden-overview.json`](https://raw.githubusercontent.com/routewarden/cli/main/observability/grafana/dashboards/routewarden-overview.json)), featuring live attack timelines, top targeted endpoints, GeoIP offender maps, verdict distributions, and real-time security event feed.
 - **Automated Container Discovery**: Alloy automatically discovers and tails reverse proxy containers labeled `routewarden.logs=true` via Docker socket with zero manual configuration.
 - **Existing Stack Integration**: Seamlessly reuses existing Grafana & Loki clusters by importing the pre-built dashboard JSON and appending Alloy / Promtail parsing stages.
 

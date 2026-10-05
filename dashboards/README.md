@@ -1,11 +1,25 @@
-# RouteWarden Grafana Dashboard
+# RouteWarden Grafana Dashboard & Alerting
 
-This directory contains the canonical, pre-built **Grafana** dashboard template for the RouteWarden ecosystem.
+This document outlines the official Grafana threat intelligence dashboard and alerting configurations for the RouteWarden ecosystem.
 
-- **Dashboard File**: [`routewarden-overview.json`](./routewarden-overview.json)
-- **Title**: `RouteWarden — Threat & Security Intelligence`
-- **Datasource**: Grafana Loki
+> [!NOTE]
+> **Single Source of Truth**: To avoid configuration drift and outdated templates, all observability assets (dashboard JSON, Loki configs, Grafana Alloy pipelines, and alerting YAML rules) are maintained and versioned in the [`routewarden/cli`](https://github.com/routewarden/cli) repository under [`observability/`](https://github.com/routewarden/cli/tree/main/observability).
+
 - **Official Documentation**: [https://routewarden.github.io/cli/dashboard](https://routewarden.github.io/cli/dashboard)
+- **Authoritative Source**: [`github.com/routewarden/cli/tree/main/observability/grafana`](https://github.com/routewarden/cli/tree/main/observability/grafana)
+
+---
+
+## Direct Download Links (Canonical)
+
+You can download the latest production templates directly from the CLI repository:
+
+| Asset | Format | Raw URL |
+|---|---|---|
+| **Threat Intelligence Dashboard** | JSON | [`routewarden-overview.json`](https://raw.githubusercontent.com/routewarden/cli/main/observability/grafana/dashboards/routewarden-overview.json) |
+| **Security Alerting Rules** | YAML | [`alerting.yaml`](https://raw.githubusercontent.com/routewarden/cli/main/observability/grafana/provisioning/alerting/alerting.yaml) |
+| **Grafana Datasource Config** | YAML | [`datasources.yaml`](https://raw.githubusercontent.com/routewarden/cli/main/observability/grafana/provisioning/datasources/datasources.yaml) |
+| **Environment Configuration** | ENV | [`routewarden.env`](https://raw.githubusercontent.com/routewarden/cli/main/observability/routewarden.env) |
 
 ---
 
@@ -36,18 +50,9 @@ This directory contains the canonical, pre-built **Grafana** dashboard template 
 
 ---
 
-## Public & Shared Dashboards
-
-RouteWarden's stack is ready for public sharing and embedding out-of-the-box:
-- **Zero-Login Anonymous Access**: Default anonymous viewer access allows instant visibility on status pages and NOC/SOC displays without login prompts.
-- **Public Dashboards**: Enabled via `GF_FEATURE_TOGGLES_ENABLE=publicDashboards` to generate public share links from the dashboard menu.
-- **Secure Portal Embedding**: Enabled via `GF_SECURITY_ALLOW_EMBEDDING=true` for embedding in company intranets or customer portals via `<iframe>`.
-
----
-
 ## Automated Alerting & Notification Channels
 
-RouteWarden includes pre-configured alerting rules in [`alerting.yaml`](./alerting.yaml):
+Pre-configured alerting rules in [`alerting.yaml`](https://raw.githubusercontent.com/routewarden/cli/main/observability/grafana/provisioning/alerting/alerting.yaml):
 - **DDoS / Attack Rate Spike**: Warning when block rate exceeds $10\,\text{req/s}$.
 - **Sensitive Path Probing**: Critical alert on attempts to access `/.env`, `/.git`, or `/.aws`.
 - **Layer 4 Brute-Force Surge**: High alert on $>15$ connection drops/bans in 3 minutes.
@@ -56,29 +61,34 @@ RouteWarden includes pre-configured alerting rules in [`alerting.yaml`](./alerti
 
 ---
 
-## How to Import
+## How to Deploy / Import
 
-### Option 1: Grafana Web UI
-1. Open your Grafana instance in your browser.
-2. Navigate to **Dashboards > New > Import**.
-3. Upload [`routewarden-overview.json`](./routewarden-overview.json) or paste its raw JSON content.
-4. Select your Loki datasource from the dropdown prompt and click **Import**.
-
-### Option 2: Grafana HTTP API
-```bash
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <GRAFANA_SERVICE_ACCOUNT_TOKEN>" \
-  -d "{\"dashboard\": $(cat routewarden-overview.json), \"overwrite\": true}" \
-  https://grafana.example.com/api/dashboards/db
-```
-
-### Option 3: Automated CLI Deployment
+### Option 1: Automated CLI Deployment (Recommended)
 If using the RouteWarden developer CLI (`rwarden`):
 ```bash
 # Launch a complete, pre-wired Grafana + Loki + Alloy stack automatically:
 rwarden dashboard up
 
+# Or launch with alerting pre-enabled:
+rwarden dashboard up --enable-alerting
+
 # Or export all observability configuration files directly to disk:
 rwarden dashboard export ./observability
+```
+
+### Option 2: Grafana Web UI
+1. Download [`routewarden-overview.json`](https://raw.githubusercontent.com/routewarden/cli/main/observability/grafana/dashboards/routewarden-overview.json).
+2. Open your Grafana instance in your browser.
+3. Navigate to **Dashboards > New > Import**.
+4. Upload the downloaded JSON file or paste its raw content.
+5. Select your Loki datasource from the dropdown prompt and click **Import**.
+
+### Option 3: Grafana HTTP API
+```bash
+curl -s https://raw.githubusercontent.com/routewarden/cli/main/observability/grafana/dashboards/routewarden-overview.json | \
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <GRAFANA_SERVICE_ACCOUNT_TOKEN>" \
+  -d "{\"dashboard\": $(cat -), \"overwrite\": true}" \
+  https://grafana.example.com/api/dashboards/db
 ```
