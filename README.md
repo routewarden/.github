@@ -2,6 +2,16 @@
 
 This repository holds organization-wide GitHub default files, canonical release assets, and profile configuration for the [RouteWarden](https://github.com/routewarden) organization.
 
+<p align="center">
+  <a href="https://www.producthunt.com/products/routewarden?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-routewarden" target="_blank" rel="noopener noreferrer">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1279797&amp;theme=dark&amp;t=1791955923055">
+      <source media="(prefers-color-scheme: light)" srcset="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1279797&amp;theme=light&amp;t=1791955891872">
+      <img alt="Routewarden - Zero-dependency edge defense for Traefik, Caddy &amp; NGINX | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1279797&amp;theme=light&amp;t=1791955891872">
+    </picture>
+  </a>
+</p>
+
 - **Organization Profile README**: Located at [`profile/README.md`](profile/README.md)
 - **Universal CLI Installer**: Served from [https://routewarden.github.io/install.sh](https://routewarden.github.io/install.sh)
 - **HTTP Gateway JSON Schema**: Served from [https://routewarden.github.io/schema.json](https://routewarden.github.io/schema.json)

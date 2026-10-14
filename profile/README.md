@@ -7,6 +7,16 @@
   <p><strong>Open-source, high-performance security middleware and edge defense tools.</strong></p>
 
   <p>
+    <a href="https://www.producthunt.com/products/routewarden?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-routewarden" target="_blank" rel="noopener noreferrer">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1279797&amp;theme=dark&amp;t=1791955923055">
+        <source media="(prefers-color-scheme: light)" srcset="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1279797&amp;theme=light&amp;t=1791955891872">
+        <img alt="Routewarden - Zero-dependency edge defense for Traefik, Caddy &amp; NGINX | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1279797&amp;theme=light&amp;t=1791955891872">
+      </picture>
+    </a>
+  </p>
+
+  <p>
     <a href="https://routewarden.github.io/"><img src="https://img.shields.io/badge/Docs-VitePress%20Wiki-6366f1.svg?style=for-the-badge" alt="Documentation Site" /></a>
     <a href="https://routewarden.github.io/?playground=open"><img src="https://img.shields.io/badge/Live%20Demo-Interactive%20Playground-0ea5e9.svg?style=for-the-badge" alt="Interactive Playground" /></a>
     <a href="https://github.com/routewarden/traefik-warden"><img src="https://img.shields.io/badge/Traefik%20Plugin-traefik--warden-blue.svg?style=for-the-badge&logo=traefik" alt="Traefik Plugin" /></a>
